@@ -8,7 +8,6 @@ namespace BeitKnesetDisplay.Views
         public ZmanimView()
         {
             InitializeComponent();
-            Content = new ZmanimView();
 
         }
     }

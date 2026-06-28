@@ -6,7 +6,7 @@
         Background="Black"
         FlowDirection="RightToLeft">
 
-    <Grid>
+    <Grid Background="#55000000">
 
         <!-- רקע -->
    

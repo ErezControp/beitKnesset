@@ -22,3 +22,6 @@ C:\VisualStudioProjects\BeitKnesetDisplay\BeitKnesetDisplay\obj\Debug\net10.0-wi
 C:\VisualStudioProjects\BeitKnesetDisplay\BeitKnesetDisplay\bin\Debug\net10.0-windows\shabbat.json
 C:\VisualStudioProjects\BeitKnesetDisplay\BeitKnesetDisplay\obj\Debug\net10.0-windows\Views\ZmanimView.baml
 C:\VisualStudioProjects\BeitKnesetDisplay\BeitKnesetDisplay\obj\Debug\net10.0-windows\Views\ZmanimView.g.cs
+C:\VisualStudioProjects\BeitKnesetDisplay\BeitKnesetDisplay\obj\Debug\net10.0-windows\BeitKnesetDisplay.sourcelink.json
+C:\VisualStudioProjects\BeitKnesetDisplay\BeitKnesetDisplay\obj\Debug\net10.0-windows\Views\MessagesView.baml
+C:\VisualStudioProjects\BeitKnesetDisplay\BeitKnesetDisplay\obj\Debug\net10.0-windows\Views\MessagesView.g.cs

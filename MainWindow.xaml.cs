@@ -13,8 +13,7 @@ namespace BeitKnesetDisplay
         public MainWindow()
         {
             InitializeComponent();
-
-            //Content = new BeitKnesetDisplay.Views.ZmanimView();
+            DataContext = new MainViewModel(null);
         }
     }
 }

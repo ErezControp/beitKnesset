@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BeitKnesetDisplay")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+542638d3ad018914773679827978453cd734e597")]
 [assembly: System.Reflection.AssemblyProductAttribute("BeitKnesetDisplay")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BeitKnesetDisplay")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
