@@ -63,7 +63,69 @@ namespace BeitKnesetDisplay.ViewModels
                 OnPropertyChanged();
             }
         }
+        private string _sunrise;
+        public string Sunrise
+        {
+            get => _sunrise;
+            set { _sunrise = value; OnPropertyChanged(); }
+        }
 
+        private string _sunset;
+        public string Sunset
+        {
+            get => _sunset;
+            set { _sunset = value; OnPropertyChanged(); }
+        }
+
+        private string _sofZmanShma;
+        public string SofZmanShma
+        {
+            get => _sofZmanShma;
+            set { _sofZmanShma = value; OnPropertyChanged(); }
+        }
+
+        private string _chatzot;
+        public string Chatzot
+        {
+            get => _chatzot;
+            set { _chatzot = value; OnPropertyChanged(); }
+        }
+
+        private string _minchaGedola;
+        public string MinchaGedola
+        {
+            get => _minchaGedola;
+            set { _minchaGedola = value; OnPropertyChanged(); }
+        }
+
+        private string _minchaKetana;
+        public string MinchaKetana
+        {
+            get => _minchaKetana;
+            set { _minchaKetana = value; OnPropertyChanged(); }
+        }
+
+        private string _plagHaMincha;
+        public string PlagHaMincha
+        {
+            get => _plagHaMincha;
+            set { _plagHaMincha = value; OnPropertyChanged(); }
+        }
+        private async void LoadZmanim()
+        {
+            if (_service == null)
+                return;
+
+            var data = await _service.GetDisplayDataAsync();
+
+            Sunrise = data.Sunrise;
+            Sunset = data.Sunset;
+            SofZmanShma = data.SofZmanShma;
+            Chatzot = data.Chatzot;
+            MinchaGedola = data.MinchaGedola;
+            MinchaKetana = data.MinchaKetana;
+            PlagHaMincha = data.PlagHaMincha;
+        }
         public MainViewModel(IHebcalService service)
         {
             _service = service;
@@ -79,6 +141,7 @@ namespace BeitKnesetDisplay.ViewModels
             StartScreenRotation();
 
             ShowScreen();
+            LoadZmanim();
         }
 
         private void StartClock()

@@ -44,8 +44,10 @@
 
             <!-- HEADER -->
             <Border Grid.Row="0"
-        Background="#99000000"
-        Padding="10">
+        Background="#66000000"
+        Padding="10"
+        BorderBrush="#66D4AF37"
+        BorderThickness="0,0,0,2">
 
                 <Grid>
                     <Grid.RowDefinitions>
@@ -53,39 +55,79 @@
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
-                    <!-- שעון באמצע -->
-                    <TextBlock Text="{Binding CurrentTime}"
-                               FontSize="80"
-                               FontWeight="Bold"
-                               Foreground="White"
-                               HorizontalAlignment="Center">
+                    <!-- שעון גדול באמצע עם Glow -->
+                    <Grid Grid.Row="0"
+              HorizontalAlignment="Center">
 
-                        <TextBlock.Effect>
-                            <DropShadowEffect Color="Gold"
-                                              BlurRadius="20"
-                                              ShadowDepth="0"
-                                              Opacity="1"/>
-                        </TextBlock.Effect>
+                        <!-- שכבת Glow -->
+                        <TextBlock Text="{Binding CurrentTime}"
+                       FontSize="86"
+                       FontWeight="Bold"
+                       Foreground="#FFD4AF37"
+                       Opacity="0.75"
+                       HorizontalAlignment="Center"
+                       TextAlignment="Center">
 
-                    </TextBlock>
+                            <TextBlock.Effect>
+                                <DropShadowEffect Color="#FFD4AF37"
+                                      BlurRadius="42"
+                                      ShadowDepth="0"
+                                      Opacity="1"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
 
-                    <!-- תאריך + פרשה מתחת -->
+                        <!-- טקסט חד מעל -->
+                        <TextBlock Text="{Binding CurrentTime}"
+                       FontSize="86"
+                       FontWeight="Bold"
+                       Foreground="White"
+                       HorizontalAlignment="Center"
+                       TextAlignment="Center"/>
+                    </Grid>
+
+                    <!-- תאריך עברי + לועזי + יום + פרשה -->
                     <StackPanel Grid.Row="1"
-                    Orientation="Vertical"
+                    Orientation="Horizontal"
                     HorizontalAlignment="Center"
-                    Margin="0,5,0,0">
+                    Margin="0,4,0,0">
+
+                        <TextBlock Text="{Binding DayName}"
+                       FontSize="24"
+                       FontWeight="SemiBold"
+                       Foreground="White"
+                       Margin="14,0"/>
+
+                        <TextBlock Text="|"
+                       FontSize="24"
+                       Foreground="#FFD4AF37"
+                       Margin="8,0"/>
+
+                        <TextBlock Text="{Binding GregorianDate}"
+                       FontSize="24"
+                       Foreground="White"
+                       Margin="14,0"/>
+
+                        <TextBlock Text="|"
+                       FontSize="24"
+                       Foreground="#FFD4AF37"
+                       Margin="8,0"/>
 
                         <TextBlock Text="{Binding HebrewDate}"
                        FontSize="24"
                        Foreground="White"
-                       HorizontalAlignment="Center"/>
+                       Margin="14,0"/>
+
+                        <TextBlock Text="|"
+                       FontSize="24"
+                       Foreground="#FFD4AF37"
+                       Margin="8,0"/>
 
                         <TextBlock Text="{Binding Parasha}"
-                       FontSize="20"
+                       FontSize="24"
+                       FontWeight="SemiBold"
                        Foreground="#FFD4AF37"
-                       HorizontalAlignment="Center"/>
+                       Margin="14,0"/>
                     </StackPanel>
-
                 </Grid>
             </Border>
 
