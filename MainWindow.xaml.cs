@@ -15,6 +15,10 @@ namespace BeitKnesetDisplay
         {
             InitializeComponent();
             PowerManager.PreventSleep();
+            WindowStyle = WindowStyle.None;
+            WindowState = WindowState.Maximized;
+            Topmost = true;
+
             var httpClient = new HttpClient();
             IHebcalService service = new HebcalService(httpClient);
 

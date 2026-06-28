@@ -38,16 +38,17 @@
 
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="110"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
             <!-- HEADER -->
             <Border Grid.Row="0"
-        Background="#66000000"
-        Padding="10"
-        BorderBrush="#66D4AF37"
-        BorderThickness="0,0,0,2">
+                    Background="#66000000"
+                    Padding="10"
+                    BorderBrush="#66D4AF37"
+                    BorderThickness="0,0,0,2"
+                    Height="180">
 
                 <Grid>
                     <Grid.RowDefinitions>
@@ -57,7 +58,7 @@
 
                     <!-- שעון גדול באמצע עם Glow -->
                     <Grid Grid.Row="0"
-              HorizontalAlignment="Center">
+                            HorizontalAlignment="Center">
 
                         <!-- שכבת Glow -->
                         <TextBlock Text="{Binding CurrentTime}"
@@ -78,12 +79,13 @@
 
                         <!-- טקסט חד מעל -->
                         <TextBlock Text="{Binding CurrentTime}"
-                       FontSize="86"
-                       FontWeight="Bold"
-                       Foreground="White"
-                       HorizontalAlignment="Center"
-                       TextAlignment="Center"/>
-                    </Grid>
+                                   FontSize="86"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   TextAlignment="Center"
+                                   LineHeight="70"/>
+                            </Grid> 
 
                     <!-- תאריך עברי + לועזי + יום + פרשה -->
                     <StackPanel Grid.Row="1"
