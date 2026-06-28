@@ -1,5 +1,4 @@
 ﻿using BeitKnesetDisplay.Services;
-using BeitKnesetDisplay.Views;
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -9,72 +8,124 @@ namespace BeitKnesetDisplay.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
     {
-        private string _currentTime;
         private readonly IHebcalService _service;
-        private DispatcherTimer _screenTimer;
+
+        private DispatcherTimer _clockTimer = new DispatcherTimer();
+        private DispatcherTimer _screenTimer = new DispatcherTimer();
+
+
         private int _screenIndex = 0;
-        public string Sunrise { get; set; } = "05:35";
-        public string Sunset { get; set; } = "19:50";
-        public string SofZmanShma { get; set; } = "09:09";
-        public string Chatzot { get; set; } = "12:43";
-        public string MinchaGedola { get; set; } = "13:19";
-        public string MinchaKetana { get; set; } = "16:52";
-        public string PlagHaMincha { get; set; } = "18:21";
+
+        private string _currentTime = "";
+        private string _hebrewDate = "";
+        private string _parasha = "";
+        private object _currentView = new object();
+
+        private ZmanimViewModel _zmanimViewModel;
+        private MessagesViewModel _messagesViewModel;
 
         public string CurrentTime
         {
             get => _currentTime;
-            set { _currentTime = value; OnPropertyChanged(); }
+            set
+            {
+                _currentTime = value;
+                OnPropertyChanged();
+            }
         }
-        private object _currentView;
+
+        public string HebrewDate
+        {
+            get => _hebrewDate;
+            set
+            {
+                _hebrewDate = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string Parasha
+        {
+            get => _parasha;
+            set
+            {
+                _parasha = value;
+                OnPropertyChanged();
+            }
+        }
+
         public object CurrentView
         {
             get => _currentView;
-            set { _currentView = value; OnPropertyChanged(); }
+            set
+            {
+                _currentView = value;
+                OnPropertyChanged();
+            }
         }
+
         public MainViewModel(IHebcalService service)
         {
             _service = service;
 
-            // שעון
-            var timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1);
-            timer.Tick += (s, e) =>
+            HebrewDate = "כ״ב סיון תשפ״ו";
+            Parasha = "פרשת השבוע";
+            CurrentTime = DateTime.Now.ToString("HH:mm:ss");
+
+            _zmanimViewModel = new ZmanimViewModel();
+            _messagesViewModel = new MessagesViewModel();
+
+            StartClock();
+            StartScreenRotation();
+
+            ShowScreen();
+        }
+
+        private void StartClock()
+        {
+            _clockTimer = new DispatcherTimer
+            {
+                Interval = TimeSpan.FromSeconds(1)
+            };
+
+            _clockTimer.Tick += (s, e) =>
             {
                 CurrentTime = DateTime.Now.ToString("HH:mm:ss");
             };
-            timer.Start();
 
-            // התחלה
-            ShowScreen();
+            _clockTimer.Start();
+        }
 
-            // מעבר בין מסכים
-            _screenTimer = new DispatcherTimer();
-            _screenTimer.Interval = TimeSpan.FromSeconds(10);
+        private void StartScreenRotation()
+        {
+            _screenTimer = new DispatcherTimer
+            {
+                Interval = TimeSpan.FromSeconds(10)
+            };
+
             _screenTimer.Tick += (s, e) =>
             {
-                _screenIndex++;
+                _screenIndex = (_screenIndex + 1) % 2;
                 ShowScreen();
             };
+
             _screenTimer.Start();
         }
+
         private void ShowScreen()
         {
-            int screen = _screenIndex % 2;
-
-            if (screen == 0)
+            if (_screenIndex == 0)
             {
-                CurrentView = new ZmanimView
-                {
-                    DataContext = this
-                };
+                CurrentView = _zmanimViewModel;
             }
             else
             {
-                CurrentView = new MessagesView();
+                CurrentView = _messagesViewModel;
             }
         }
+
         public event PropertyChangedEventHandler PropertyChanged;
+
         private void OnPropertyChanged([CallerMemberName] string name = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));

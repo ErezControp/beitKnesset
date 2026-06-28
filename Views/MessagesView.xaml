@@ -3,29 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              FlowDirection="RightToLeft">
 
-    <Grid Margin="60">
+    <Grid>
+        <Border Background="#AA000000"
+                CornerRadius="25"
+                Padding="40"
+                BorderBrush="#66D4AF37"
+                BorderThickness="2">
 
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
 
-            <TextBlock Text="ברוכים הבאים לבית הכנסת"
-                       FontSize="48"
-                       Foreground="White"
-                       Margin="0,20"
-                       TextAlignment="Center"/>
+                <TextBlock Text="{Binding MainMessage}"
+                           FontSize="52"
+                           FontWeight="Bold"
+                           Foreground="#FFD4AF37"
+                           TextAlignment="Center"
+                           HorizontalAlignment="Center"/>
 
-            <TextBlock Text="נא לשמור על השקט בזמן התפילה"
-                       FontSize="36"
-                       Foreground="Gold"
-                       Margin="0,20"
-                       TextAlignment="Center"/>
-
-            <TextBlock Text="נא לכבות או להשתיק טלפונים"
-                       FontSize="36"
-                       Foreground="Gold"
-                       Margin="0,20"
-                       TextAlignment="Center"/>
-
-        </StackPanel>
-
+                <TextBlock Text="{Binding SubMessage}"
+                           FontSize="34"
+                           Foreground="White"
+                           Margin="0,30,0,0"
+                           TextAlignment="Center"
+                           HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Border>
     </Grid>
 </UserControl>

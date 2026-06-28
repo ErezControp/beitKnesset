@@ -13,7 +13,12 @@ namespace BeitKnesetDisplay
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new MainViewModel(null);
+
+            var httpClient = new HttpClient();
+            IHebcalService service = new HebcalService(httpClient);
+
+            DataContext = new MainViewModel(service);
+
         }
     }
 }

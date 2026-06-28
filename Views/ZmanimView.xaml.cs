@@ -1,5 +1,4 @@
-﻿using BeitKnesetDisplay.ViewModels;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 
 namespace BeitKnesetDisplay.Views
 {
@@ -8,7 +7,6 @@ namespace BeitKnesetDisplay.Views
         public ZmanimView()
         {
             InitializeComponent();
-
         }
     }
 }

@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\beit_mikdash.jpg" />
     <None Remove="shabbat.json" />
     <None Remove="zmanim.json" />
   </ItemGroup>
@@ -20,6 +21,12 @@
     <Content Include="zmanim.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\beit_mikdash.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
