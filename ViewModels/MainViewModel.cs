@@ -118,6 +118,18 @@ namespace BeitKnesetDisplay.ViewModels
             get => _holidayText;
             set { _holidayText = value; OnPropertyChanged(); }
         }
+        private string _dayName;
+        public string DayName
+        {
+            get => _dayName;
+            set { _dayName = value; OnPropertyChanged(); }
+        }
+        private string _gregorianDate;
+        public string GregorianDate
+        {
+            get => _gregorianDate;
+            set { _gregorianDate = value; OnPropertyChanged(); }
+        }
         private async void LoadZmanim()
         {
             if (_service == null)
@@ -133,6 +145,7 @@ namespace BeitKnesetDisplay.ViewModels
             MinchaKetana = data.MinchaKetana;
             PlagHaMincha = data.PlagHaMincha;
             Parasha = data.Parasha;
+            OnPropertyChanged(nameof(Parasha));
         }
         
         private static string ToHebrewNumber(int number)
@@ -258,7 +271,10 @@ namespace BeitKnesetDisplay.ViewModels
             string holiday = GetHoliday(month, day);
 
             // ✅ עדכון property
-            HolidayText = holiday;
+            if (!string.IsNullOrEmpty(holiday))
+                HolidayText = holiday;
+            else
+                HolidayText = roshChodesh; // fallback
 
             return $"{prefix}, {hebrewDay} ב{months[month]} {hebrewYear} {roshChodesh}";
         }
@@ -288,8 +304,22 @@ namespace BeitKnesetDisplay.ViewModels
 
             _clockTimer.Tick += (s, e) =>
             {
-                CurrentTime = DateTime.Now.ToString("HH:mm:ss");
-                HebrewDate = GetFullHebrewDate(Sunset);
+                var now = DateTime.Now;
+
+                CurrentTime = now.ToString("HH:mm:ss");
+
+                // ✅ יום בשבוע
+                DayName = now.ToString("dddd", new System.Globalization.CultureInfo("he-IL"));
+
+                // ✅ תאריך לועזי
+                GregorianDate = now.ToString("dd/MM/yyyy");
+
+                // ✅ תאריך עברי כבר עשינו
+                if (!string.IsNullOrEmpty(Sunset))
+                {
+                    HebrewDate = GetFullHebrewDate(Sunset);
+                }
+
             };
 
             _clockTimer.Start();

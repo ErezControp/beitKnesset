@@ -38,8 +38,12 @@ namespace BeitKnesetDisplay.Services
             string zmanimUrl =
                 $"https://www.hebcal.com/zmanim?cfg=json&geonameid={GeoNameId}&date={date}";
 
+            DateTime upcomingShabbat = GetUpcomingShabbat(today);
+
             string shabbatUrl =
-                $"https://www.hebcal.com/shabbat?cfg=json&geonameid={GeoNameId}&gy={today.Year}&gm={today.Month}&gd={today.Day}&lg=he-x-NoNikud&M=on";
+                $"https://www.hebcal.com/shabbat?cfg=json&geonameid={GeoNameId}" +
+                $"&gy={upcomingShabbat.Year}&gm={upcomingShabbat.Month}&gd={upcomingShabbat.Day}" +
+                $"&lg=he-x-NoNikud&M=on";
 
             string zmanimCachePath = GetCachePath($"zmanim_{date}.json");
             string shabbatCachePath = GetCachePath($"shabbat_{date}.json");
@@ -81,7 +85,7 @@ namespace BeitKnesetDisplay.Services
             {
                 result.Parasha = ParseParashaJson(shabbatJson);
             }
-
+            
             return result;
         }
 
@@ -266,6 +270,15 @@ namespace BeitKnesetDisplay.Services
                 "Cache");
 
             return Path.Combine(folder, fileName);
+        }
+        private static DateTime GetUpcomingShabbat(DateTime date)
+        {
+            int daysToAdd = ((int)DayOfWeek.Saturday - (int)date.DayOfWeek + 7) % 7;
+
+            if (daysToAdd == 0)
+                return date; // כבר שבת
+
+            return date.AddDays(daysToAdd);
         }
     }
 }
