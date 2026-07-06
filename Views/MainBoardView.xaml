@@ -1,0 +1,149 @@
+﻿<UserControl x:Class="BeitKnesetDisplay.Views.MainBoardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             FlowDirection="RightToLeft">
+
+    <Grid>
+
+        <!-- רקע -->
+        <Image Source="/Assets/background1.jpg"
+               Stretch="Fill"/>
+
+        <!-- ========================= -->
+        <!-- שעון עליון במרכז -->
+        <!-- ========================= -->
+
+        <TextBlock Text="{Binding CurrentTime}"
+                   Width="220"
+                   Height="80"
+                   FontSize="42"
+                   FontWeight="Bold"
+                   Foreground="White"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   Margin="0,30,0,0"
+                   TextAlignment="Center" />
+
+        <!-- ========================= -->
+        <!-- יום בשבוע (ימין למעלה) -->
+        <!-- ========================= -->
+
+        <TextBlock Text="{Binding DayName}"
+                   Width="280"
+                   FontSize="26"
+                   FontWeight="Bold"
+                   Foreground="Black"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Top"
+                   Margin="0,35,80,0"/>
+
+        <!-- ========================= -->
+        <!-- תאריך עברי (שמאל למעלה) -->
+        <!-- ========================= -->
+
+        <TextBlock Text="{Binding HebrewDate}"
+                   Width="280"
+                   FontSize="22"
+                   FontWeight="Bold"
+                   Foreground="Black"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Margin="80,35,0,0"/>
+
+        <!-- ========================= -->
+        <!-- צאת שבת -->
+        <!-- ========================= -->
+
+        <StackPanel HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="100,170,0,0">
+
+            <TextBlock Text="צאת שבת"
+                       FontSize="22"
+                       FontWeight="SemiBold"
+                       Foreground="Black"
+                       TextAlignment="Center"/>
+
+            <TextBlock Text="{Binding Sunset}"
+                       FontSize="40"
+                       FontWeight="Bold"
+                       Foreground="Black"
+                       TextAlignment="Center"/>
+        </StackPanel>
+
+        <!-- ========================= -->
+        <!-- הדלקת נרות -->
+        <!-- ========================= -->
+
+        <StackPanel HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    Margin="0,170,100,0">
+
+            <TextBlock Text="הדלקת נרות"
+                       FontSize="22"
+                       FontWeight="SemiBold"
+                       Foreground="Black"
+                       TextAlignment="Center"/>
+
+            <TextBlock Text="{Binding PlagHaMincha}"
+                       FontSize="40"
+                       FontWeight="Bold"
+                       Foreground="Black"
+                       TextAlignment="Center"/>
+        </StackPanel>
+
+        <!-- ========================= -->
+        <!-- פרשת השבוע -->
+        <!-- ========================= -->
+
+        <TextBlock Text="{Binding Parasha}"
+                   FontSize="30"
+                   FontWeight="Bold"
+                   Foreground="Black"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   Margin="0,250,0,0"/>
+
+        <!-- ========================= -->
+        <!-- מרכז מתחלף -->
+        <!-- ========================= -->
+
+        <Border Width="650"
+                Height="280"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Background="Transparent">
+
+            <ContentControl Content="{Binding CurrentCenterView}"/>
+
+        </Border>
+
+        <!-- ========================= -->
+        <!-- פס תחתון שמאל -->
+        <!-- ========================= -->
+
+        <TextBlock Text="{Binding HolidayText}"
+                   FontSize="26"
+                   FontWeight="SemiBold"
+                   Foreground="Black"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Bottom"
+                   Margin="120,0,0,40"/>
+
+        <!-- ========================= -->
+        <!-- פס תחתון ימין -->
+        <!-- ========================= -->
+
+        <TextBlock Text="{Binding GregorianDate}"
+                   FontSize="26"
+                   FontWeight="SemiBold"
+                   Foreground="Black"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Bottom"
+                   Margin="0,0,120,40"/>
+
+    </Grid>
+
+</UserControl>
