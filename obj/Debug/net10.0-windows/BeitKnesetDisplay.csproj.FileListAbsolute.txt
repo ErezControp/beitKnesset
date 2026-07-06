@@ -27,3 +27,5 @@ C:\VisualStudioProjects\BeitKnesetDisplay\BeitKnesetDisplay\obj\Debug\net10.0-wi
 C:\VisualStudioProjects\BeitKnesetDisplay\BeitKnesetDisplay\obj\Debug\net10.0-windows\Views\MessagesView.g.cs
 C:\VisualStudioProjects\BeitKnesetDisplay\BeitKnesetDisplay\obj\Debug\net10.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\VisualStudioProjects\BeitKnesetDisplay\BeitKnesetDisplay\obj\Debug\net10.0-windows\BeitKnesetDisplay_MarkupCompile.lref
+C:\VisualStudioProjects\BeitKnesetDisplay\BeitKnesetDisplay\obj\Debug\net10.0-windows\Views\SoldiersView.baml
+C:\VisualStudioProjects\BeitKnesetDisplay\BeitKnesetDisplay\obj\Debug\net10.0-windows\Views\SoldiersView.g.cs

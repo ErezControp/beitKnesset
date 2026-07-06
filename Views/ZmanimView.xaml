@@ -29,7 +29,36 @@
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
+        <Style x:Key="GlassCard" TargetType="Border">
+            <Setter Property="Background" Value="#45FFFFFF"/>
+            <Setter Property="CornerRadius" Value="22"/>
+            <Setter Property="Padding" Value="20"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="BorderBrush" Value="#60FFD700"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="15"
+                              ShadowDepth="3"
+                              Color="Black"
+                              Opacity="0.5"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
+        <Style x:Key="CardTitle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="28"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="CardValue" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="52"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="#FFD700"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
     </UserControl.Resources>
 
     <Grid>
@@ -53,72 +82,81 @@
                            HorizontalAlignment="Center"
                            Margin="0,0,0,30"/>
 
-                <Grid Grid.Row="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="40"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
+                <UniformGrid Grid.Row="1"
+             Columns="2"
+             Margin="20">
 
-                    <!-- עמודה ימנית: 3 זמנים -->
-                    <StackPanel Grid.Column="0">
+                    <!-- נץ -->
+                    <Border Style="{StaticResource GlassCard}">
+                        <StackPanel>
+                            <TextBlock Text="נץ החמה"
+                       Style="{StaticResource CardTitle}" />
+                            <TextBlock Text="{Binding Sunrise}"
+                       Style="{StaticResource CardValue}" />
+                        </StackPanel>
+                    </Border>
 
-                        <Border Style="{StaticResource ZmanRowStyle}">
-                            <Grid>
-                                <TextBlock Text="זריחה" Style="{StaticResource ZmanNameStyle}"/>
-                                <TextBlock Text="{Binding Sunrise}" Style="{StaticResource ZmanTimeStyle}"/>
-                            </Grid>
-                        </Border>
+                    <!-- סוף זמן שמע -->
+                    <Border Style="{StaticResource GlassCard}">
+                        <StackPanel>
+                            <TextBlock Text="סוף זמן שמע"
+                       Style="{StaticResource CardTitle}" />
+                            <TextBlock Text="{Binding SofZmanShma}"
+                       Style="{StaticResource CardValue}" />
+                        </StackPanel>
+                    </Border>
 
-                        <Border Style="{StaticResource ZmanRowStyle}">
-                            <Grid>
-                                <TextBlock Text="סוף זמן שמע" Style="{StaticResource ZmanNameStyle}"/>
-                                <TextBlock Text="{Binding SofZmanShma}" Style="{StaticResource ZmanTimeStyle}"/>
-                            </Grid>
-                        </Border>
+                    <!-- חצות -->
+                    <Border Style="{StaticResource GlassCard}">
+                        <StackPanel>
+                            <TextBlock Text="חצות"
+                       Style="{StaticResource CardTitle}" />
+                            <TextBlock Text="{Binding Chatzot}"
+                       Style="{StaticResource CardValue}" />
+                        </StackPanel>
+                    </Border>
 
-                        <Border Style="{StaticResource ZmanRowStyle}">
-                            <Grid>
-                                <TextBlock Text="חצות" Style="{StaticResource ZmanNameStyle}"/>
-                                <TextBlock Text="{Binding Chatzot}" Style="{StaticResource ZmanTimeStyle}"/>
-                            </Grid>
-                        </Border>
+                    <!-- מנחה גדולה -->
+                    <Border Style="{StaticResource GlassCard}">
+                        <StackPanel>
+                            <TextBlock Text="מנחה גדולה"
+                       Style="{StaticResource CardTitle}" />
+                            <TextBlock Text="{Binding MinchaGedola}"
+                       Style="{StaticResource CardValue}" />
+                        </StackPanel>
+                    </Border>
 
-                    </StackPanel>
+                    <!-- מנחה קטנה -->
+                    <Border Style="{StaticResource GlassCard}">
+                        <StackPanel>
+                            <TextBlock Text="מנחה קטנה"
+                       Style="{StaticResource CardTitle}" />
+                            <TextBlock Text="{Binding MinchaKetana}"
+                       Style="{StaticResource CardValue}" />
+                        </StackPanel>
+                    </Border>
 
-                    <!-- עמודה שמאלית: 4 זמנים -->
-                    <StackPanel Grid.Column="2">
+                    <!-- פלג -->
+                    <Border Style="{StaticResource GlassCard}">
+                        <StackPanel>
+                            <TextBlock Text="פלג המנחה"
+                       Style="{StaticResource CardTitle}" />
+                            <TextBlock Text="{Binding PlagHaMincha}"
+                       Style="{StaticResource CardValue}" />
+                        </StackPanel>
+                    </Border>
 
-                        <Border Style="{StaticResource ZmanRowStyle}">
-                            <Grid>
-                                <TextBlock Text="מנחה גדולה" Style="{StaticResource ZmanNameStyle}"/>
-                                <TextBlock Text="{Binding MinchaGedola}" Style="{StaticResource ZmanTimeStyle}"/>
-                            </Grid>
-                        </Border>
+                    <!-- שקיעה -->
+                    <Border Style="{StaticResource GlassCard}">
+                        <StackPanel>
+                            <TextBlock Text="שקיעה"
+                       Style="{StaticResource CardTitle}" />
+                            <TextBlock Text="{Binding Sunset}"
+                       Style="{StaticResource CardValue}" />
+                        </StackPanel>
+                    </Border>
 
-                        <Border Style="{StaticResource ZmanRowStyle}">
-                            <Grid>
-                                <TextBlock Text="מנחה קטנה" Style="{StaticResource ZmanNameStyle}"/>
-                                <TextBlock Text="{Binding MinchaKetana}" Style="{StaticResource ZmanTimeStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <Border Style="{StaticResource ZmanRowStyle}">
-                            <Grid>
-                                <TextBlock Text="פלג המנחה" Style="{StaticResource ZmanNameStyle}"/>
-                                <TextBlock Text="{Binding PlagHaMincha}" Style="{StaticResource ZmanTimeStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <Border Style="{StaticResource ZmanRowStyle}">
-                            <Grid>
-                                <TextBlock Text="שקיעה" Style="{StaticResource ZmanNameStyle}"/>
-                                <TextBlock Text="{Binding Sunset}" Style="{StaticResource ZmanTimeStyle}"/>
-                            </Grid>
-                        </Border>
-
-                    </StackPanel>
-                </Grid>
+                </UniformGrid>
             </Grid>
         </Border>
     </Grid>

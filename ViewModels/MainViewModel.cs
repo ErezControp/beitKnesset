@@ -24,7 +24,7 @@ namespace BeitKnesetDisplay.ViewModels
 
         private ZmanimViewModel _zmanimViewModel;
         private MessagesViewModel _messagesViewModel;
-
+        private SoldiersViewModel _soldiersViewModel;
         public string CurrentTime
         {
             get => _currentTime;
@@ -287,6 +287,7 @@ namespace BeitKnesetDisplay.ViewModels
 
             _zmanimViewModel = new ZmanimViewModel();
             _messagesViewModel = new MessagesViewModel();
+            _soldiersViewModel = new SoldiersViewModel();
 
             StartClock();
             StartScreenRotation();
@@ -334,7 +335,7 @@ namespace BeitKnesetDisplay.ViewModels
 
             _screenTimer.Tick += (s, e) =>
             {
-                _screenIndex = (_screenIndex + 1) % 2;
+                _screenIndex = (_screenIndex + 1) % 3;
                 ShowScreen();
             };
 
@@ -343,13 +344,19 @@ namespace BeitKnesetDisplay.ViewModels
 
         private void ShowScreen()
         {
-            if (_screenIndex == 0)
+            switch (_screenIndex)
             {
-                CurrentView = _zmanimViewModel;
-            }
-            else
-            {
-                CurrentView = _messagesViewModel;
+                case 0:
+                    CurrentView = _zmanimViewModel;
+                    break;
+
+                case 1:
+                    CurrentView = _messagesViewModel;
+                    break;
+
+                case 2:
+                    CurrentView = _soldiersViewModel;
+                    break;
             }
         }
 

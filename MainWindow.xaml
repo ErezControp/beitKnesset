@@ -21,20 +21,20 @@
         <DataTemplate DataType="{x:Type vm:MessagesViewModel}">
             <views:MessagesView />
         </DataTemplate>
-
+        
+        <DataTemplate DataType="{x:Type vm:SoldiersViewModel}">
+            <views:SoldiersView/>
+        </DataTemplate>
+        
     </Window.Resources>
 
     <Grid>
 
-        <!-- רקע תמונה -->
-        <Grid.Background>
-            <ImageBrush ImageSource="Assets/beit_mikdash.jpg"
-                        Stretch="UniformToFill"
-                        Opacity="1"/>
-        </Grid.Background>
+        <Image Source="/Assets/beit_mikdash.jpg"
+           Stretch="UniformToFill"/>
 
-        <!-- שכבת כהות מעל הרקע כדי שהטקסט יהיה קריא -->
-        <Border Background="#22000000" Opacity="0.1"/>
+        <!-- Overlay כהה עדין -->
+        <Rectangle Fill="#55000000"/>
 
         <Grid>
             <Grid.RowDefinitions>
@@ -43,7 +43,7 @@
             </Grid.RowDefinitions>
 
             <!-- HEADER -->
-            <Border Grid.Row="0" Background="#AA000000" Padding="10">
+            <Border Grid.Row="0" Background="#66000000" CornerRadius="0,0,25,25" Padding="15">
                 <Grid>
 
                     <Grid.RowDefinitions>
@@ -61,19 +61,27 @@
 
                         <!-- שעון -->
                         <TextBlock Grid.Column="0"
-                       Text="{Binding CurrentTime}"
-                       FontSize="70"
-                       FontWeight="Bold"
-                       Foreground="#FFD700"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"/>
+                                   Text="{Binding CurrentTime}"
+                                   FontSize="90"
+                                   FontWeight="Bold"
+                                   Foreground="#FFD700"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center">
+
+                            <TextBlock.Effect>
+                                <DropShadowEffect
+                                Color="#FFD700"
+                                BlurRadius="25"
+                                ShadowDepth="0"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
 
                         <!-- תאריך עברי -->
                         <TextBlock Grid.Column="1"
                        Text="{Binding HebrewDate}"
-                       FontSize="36"
+                       FontSize="42"
                        FontWeight="SemiBold"
-                       Foreground="White"
+                       Foreground="#FFF8DC"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center"
                        TextAlignment="Center"/>
@@ -81,9 +89,9 @@
                         <!-- פרשה -->
                         <TextBlock Grid.Column="2"
                        Text="{Binding Parasha}"
-                       FontSize="36"
-                       FontWeight="SemiBold"
-                       Foreground="#FFD700"
+                       FontSize="38"
+                       FontWeight="Bold"
+                       Foreground="#FFE066"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center"
                        TextAlignment="Center"/>
@@ -96,9 +104,9 @@
                     Margin="0,10,0,0">
 
                         <TextBlock Text="{Binding DayName}"
-                       FontSize="24"
-                       Foreground="LightGray"
-                       Margin="10,0"/>
+                                   FontSize="24"
+                                   Foreground="#F5F5DC"
+                                   Margin="10,0"/>
 
                         <TextBlock Text="|"
                        FontSize="24"
