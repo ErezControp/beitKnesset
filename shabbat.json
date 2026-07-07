@@ -1,7 +1,7 @@
 {
-  "title": "Hebcal Hod HaSharon June 2026",
-  "date": "2026-06-24T13:50:06.736Z",
-  "version": "6.6.0-3.8.2",
+  "title": "Hebcal Hod HaSharon July 2026",
+  "date": "2026-07-06T13:45:06.860Z",
+  "version": "6.6.0-3.8.3",
   "location": {
     "title": "Hod HaSharon, Israel",
     "city": "Hod HaSharon",
@@ -17,55 +17,93 @@
     "geonameid": 294760
   },
   "range": {
-    "start": "2026-06-26",
-    "end": "2026-06-27"
+    "start": "2026-07-10",
+    "end": "2026-07-15"
   },
   "items": [
     {
-      "title": "הדלקת נרות: 19:32",
-      "date": "2026-06-26T19:32:00+03:00",
+      "title": "הדלקת נרות: 19:31",
+      "date": "2026-07-10T19:31:00+03:00",
       "category": "candles",
       "title_orig": "Candle lighting",
       "hebrew": "הדלקת נרות",
-      "memo": "פרשת בלק"
+      "memo": "פרשת מטות־מסעי"
     },
     {
-      "title": "פרשת בלק",
-      "date": "2026-06-27",
-      "hdate": "12 Tamuz 5786",
+      "title": "פרשת מטות־מסעי",
+      "date": "2026-07-11",
+      "hdate": "26 Tamuz 5786",
       "category": "parashat",
-      "title_orig": "Parashat Balak",
-      "hebrew": "פרשת בלק",
+      "title_orig": "Parashat Matot-Masei",
+      "hebrew": "פרשת מטות־מסעי",
       "leyning": {
-        "1": "Numbers 22:2-22:12",
-        "2": "Numbers 22:13-22:20",
-        "3": "Numbers 22:21-22:38",
-        "4": "Numbers 22:39-23:12",
-        "5": "Numbers 23:13-23:26",
-        "6": "Numbers 23:27-24:13",
-        "7": "Numbers 24:14-25:9",
-        "torah": "Numbers 22:2-25:9",
-        "haftarah": "Micah 5:6-6:8",
-        "maftir": "Numbers 25:7-25:9",
+        "1": "Numbers 30:2-31:12",
+        "2": "Numbers 31:13-31:54",
+        "3": "Numbers 32:1-32:19",
+        "4": "Numbers 32:20-33:49",
+        "5": "Numbers 33:50-34:15",
+        "6": "Numbers 34:16-35:8",
+        "7": "Numbers 35:9-36:13",
+        "torah": "Numbers 30:2-36:13",
+        "haftarah": "Jeremiah 2:4-28, 3:4",
+        "haftarah_sephardic": "Jeremiah 2:4-28, 4:1-2",
+        "maftir": "Numbers 36:11-36:13",
         "triennial": {
-          "1": "Numbers 22:2-22:4",
-          "2": "Numbers 22:5-22:7",
-          "3": "Numbers 22:8-22:12",
-          "4": "Numbers 22:13-22:20",
-          "5": "Numbers 22:21-22:27",
-          "6": "Numbers 22:28-22:30",
-          "7": "Numbers 22:31-22:38",
-          "maftir": "Numbers 22:36-22:38"
+          "1": "Numbers 30:2-30:9",
+          "2": "Numbers 30:10-30:13",
+          "3": "Numbers 30:14-30:17",
+          "4": "Numbers 31:1-31:12",
+          "5": "Numbers 31:13-31:24",
+          "6": "Numbers 31:25-31:41",
+          "7": "Numbers 31:42-31:54",
+          "maftir": "Numbers 31:51-31:54"
         }
       },
-      "link": "https://hebcal.com/s/5786i/40?us=js&um=api"
+      "link": "https://hebcal.com/s/5786i/42d?us=js&um=api"
     },
     {
-      "title": "הבדלה: 20:33",
-      "date": "2026-06-27T20:33:00+03:00",
+      "title": "מברכים חודש אב",
+      "date": "2026-07-11",
+      "hdate": "26 Tamuz 5786",
+      "category": "mevarchim",
+      "title_orig": "Shabbat Mevarchim Chodesh Av",
+      "hebrew": "מברכים חודש אב",
+      "memo": "מולד הלבנה אב יהיה ביום שלישי בשבוע, בשעה 19 בערב, ו-30 דקות ו-17 חלקים"
+    },
+    {
+      "title": "הבדלה: 20:31",
+      "date": "2026-07-11T20:31:00+03:00",
       "category": "havdalah",
       "title_orig": "Havdalah",
       "hebrew": "הבדלה"
+    },
+    {
+      "title": "יום ז׳בוטינסקי",
+      "date": "2026-07-14",
+      "hdate": "29 Tamuz 5786",
+      "category": "holiday",
+      "subcat": "modern",
+      "title_orig": "Jabotinsky Day",
+      "hebrew": "יום ז׳בוטינסקי",
+      "link": "https://hebcal.com/h/jabotinsky-day-2026?i=on&us=js&um=api",
+      "memo": "יום המציין את חייו וחזונו של המנהיג הציוני זאב ז'בוטינסקי"
+    },
+    {
+      "title": "ראש חודש אב",
+      "date": "2026-07-15",
+      "hdate": "1 Av 5786",
+      "category": "roshchodesh",
+      "title_orig": "Rosh Chodesh Av",
+      "hebrew": "ראש חודש אב",
+      "leyning": {
+        "1": "Numbers 28:1-28:3",
+        "2": "Numbers 28:3-28:5",
+        "3": "Numbers 28:6-28:10",
+        "4": "Numbers 28:11-28:15",
+        "torah": "Numbers 28:1-15"
+      },
+      "link": "https://hebcal.com/h/rosh-chodesh-av-2026?i=on&us=js&um=api",
+      "memo": "תחילת חודש אב בלוח העברי. אב הוא החודש ה-11 בשנה העברית האזרחית (ה-12 בשנים מעוברות) והחודש ה-5 בשנה העברית המקראית. יש בו 30 ימים והוא מקביל ליולי או אוגוסט בלוח הגרגוריאני. ראש חודש הוא מועד המצוין בתחילת כל חודש בלוח העברי ומסומן על ידי מולד הלבנה"
     }
   ]
 }

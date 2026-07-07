@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="BeitKnesetDisplay.Views.PhonesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid Background="#202020">
+
+        <StackPanel VerticalAlignment="Center">
+
+            <TextBlock Text="📵"
+                       FontSize="150"
+                       HorizontalAlignment="Center"/>
+
+            <TextBlock Text="נא לכבות או להשתיק"
+                       FontSize="60"
+                       FontWeight="Bold"
+                       Foreground="White"
+                       HorizontalAlignment="Center"/>
+
+            <TextBlock Text="טלפונים ניידים"
+                       FontSize="60"
+                       FontWeight="Bold"
+                       Foreground="#FFD700"
+                       HorizontalAlignment="Center"/>
+
+            <TextBlock Text="בזמן התפילה וקריאת התורה"
+                       FontSize="40"
+                       Foreground="White"
+                       HorizontalAlignment="Center"
+                       Margin="0,30,0,0"/>
+
+        </StackPanel>
+
+    </Grid>
+
+</UserControl>

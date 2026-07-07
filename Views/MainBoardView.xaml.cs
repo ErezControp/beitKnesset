@@ -15,7 +15,7 @@ namespace BeitKnesetDisplay.Views
     /// <summary>
     /// Interaction logic for MainBoardView.xaml
     /// </summary>
-    public partial class MainBoardView : Window
+    public partial class MainBoardView : UserControl
     {
         public MainBoardView()
         {

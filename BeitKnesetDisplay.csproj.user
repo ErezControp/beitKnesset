@@ -5,10 +5,19 @@
     <Compile Update="Views\MainBoardView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\MessagesView.xaml.cs">
+    <Compile Update="Views\ParashaView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\PhonesView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\PrayersView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\SoldiersView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\WelcomeView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\ZmanimView.xaml.cs">

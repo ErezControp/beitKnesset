@@ -11,5 +11,7 @@
         public string MinchaKetana { get; set; } = "—";
         public string PlagHaMincha { get; set; } = "—";
         public string StatusMessage { get; set; } = "";
+        public string CandleLighting { get; set; } = "";
+        public string Havdalah { get; set; } = "";
     }
 }

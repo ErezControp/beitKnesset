@@ -2,9 +2,9 @@
 
 namespace BeitKnesetDisplay.Views
 {
-    public partial class MessagesView : UserControl
+    public partial class PrayersView : UserControl
     {
-        public MessagesView()
+        public PrayersView()
         {
             InitializeComponent();
         }

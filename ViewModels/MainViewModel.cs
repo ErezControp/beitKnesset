@@ -1,9 +1,10 @@
 ﻿using BeitKnesetDisplay.Services;
+using BeitKnesetDisplay.Views;
 using System;
 using System.ComponentModel;
+using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Windows.Threading;
-using System.Globalization;
 
 namespace BeitKnesetDisplay.ViewModels
 {
@@ -22,8 +23,6 @@ namespace BeitKnesetDisplay.ViewModels
         private string _parasha = "";
         private object _currentView = new object();
 
-        private ZmanimViewModel _zmanimViewModel;
-        private MessagesViewModel _messagesViewModel;
         private SoldiersViewModel _soldiersViewModel;
         public string CurrentTime
         {
@@ -34,7 +33,27 @@ namespace BeitKnesetDisplay.ViewModels
                 OnPropertyChanged();
             }
         }
+        private string _candleLighting = "";
+        public string CandleLighting
+        {
+            get => _candleLighting;
+            set
+            {
+                _candleLighting = value;
+                OnPropertyChanged();
+            }
+        }
 
+        private string _havdalah = "";
+        public string Havdalah
+        {
+            get => _havdalah;
+            set
+            {
+                _havdalah = value;
+                OnPropertyChanged();
+            }
+        }
         public string HebrewDate
         {
             get => _hebrewDate;
@@ -64,67 +83,67 @@ namespace BeitKnesetDisplay.ViewModels
                 OnPropertyChanged();
             }
         }
-        private string _sunrise;
+        private string _sunrise = "";
         public string Sunrise
         {
             get => _sunrise;
             set { _sunrise = value; OnPropertyChanged(); }
         }
 
-        private string _sunset;
+        private string _sunset = "";
         public string Sunset
         {
             get => _sunset;
             set { _sunset = value; OnPropertyChanged(); }
         }
 
-        private string _sofZmanShma;
+        private string _sofZmanShma = "";
         public string SofZmanShma
         {
             get => _sofZmanShma;
             set { _sofZmanShma = value; OnPropertyChanged(); }
         }
 
-        private string _chatzot;
+        private string _chatzot = "";
         public string Chatzot
         {
             get => _chatzot;
             set { _chatzot = value; OnPropertyChanged(); }
         }
 
-        private string _minchaGedola;
+        private string _minchaGedola = "";
         public string MinchaGedola
         {
             get => _minchaGedola;
             set { _minchaGedola = value; OnPropertyChanged(); }
         }
 
-        private string _minchaKetana;
+        private string _minchaKetana = "";
         public string MinchaKetana
         {
             get => _minchaKetana;
             set { _minchaKetana = value; OnPropertyChanged(); }
         }
 
-        private string _plagHaMincha;
+        private string _plagHaMincha = "";
         public string PlagHaMincha
         {
             get => _plagHaMincha;
             set { _plagHaMincha = value; OnPropertyChanged(); }
         }
-        private string _holidayText;
+        private string _holidayText = "";
         public string HolidayText
         {
             get => _holidayText;
             set { _holidayText = value; OnPropertyChanged(); }
         }
-        private string _dayName;
+        private string _dayName = "";
         public string DayName
         {
             get => _dayName;
             set { _dayName = value; OnPropertyChanged(); }
         }
-        private string _gregorianDate;
+        private string _gregorianDate = "";
         public string GregorianDate
         {
             get => _gregorianDate;
@@ -145,6 +164,8 @@ namespace BeitKnesetDisplay.ViewModels
             MinchaKetana = data.MinchaKetana;
             PlagHaMincha = data.PlagHaMincha;
             Parasha = data.Parasha;
+            CandleLighting = data.CandleLighting;
+            Havdalah = data.Havdalah;
             OnPropertyChanged(nameof(Parasha));
         }
         
@@ -285,8 +306,6 @@ namespace BeitKnesetDisplay.ViewModels
                         
             CurrentTime = DateTime.Now.ToString("HH:mm:ss");
 
-            _zmanimViewModel = new ZmanimViewModel();
-            _messagesViewModel = new MessagesViewModel();
             _soldiersViewModel = new SoldiersViewModel();
 
             StartClock();
@@ -335,7 +354,7 @@ namespace BeitKnesetDisplay.ViewModels
 
             _screenTimer.Tick += (s, e) =>
             {
-                _screenIndex = (_screenIndex + 1) % 3;
+                _screenIndex = (_screenIndex + 1) % 6;
                 ShowScreen();
             };
 
@@ -347,20 +366,32 @@ namespace BeitKnesetDisplay.ViewModels
             switch (_screenIndex)
             {
                 case 0:
-                    CurrentView = _zmanimViewModel;
+                    CurrentView = new MainBoardView();
                     break;
 
                 case 1:
-                    CurrentView = _messagesViewModel;
+                    CurrentView = _soldiersViewModel;
                     break;
 
                 case 2:
-                    CurrentView = _soldiersViewModel;
+                    CurrentView = new PhonesView();
+                    break;
+
+                case 3:
+                    CurrentView = new PrayersView();
+                    break;
+
+                case 4:
+                    CurrentView = new ParashaView();
+                    break;
+
+                case 5:
+                    CurrentView = new WelcomeView();
                     break;
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         private void OnPropertyChanged([CallerMemberName] string name = null)
         {

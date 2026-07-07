@@ -9,7 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\background1.jpg" />
     <None Remove="Assets\beit_mikdash.jpg" />
+    <None Remove="Assets\controp_logo.PNG" />
     <None Remove="shabbat.json" />
     <None Remove="zmanim.json" />
   </ItemGroup>
@@ -24,7 +26,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\background1.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\beit_mikdash.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\controp_logo.PNG">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

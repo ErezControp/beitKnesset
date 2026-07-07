@@ -17,7 +17,42 @@ namespace BeitKnesetDisplay.Services
         {
             PropertyNameCaseInsensitive = true
         };
+        private static string ExtractTime(string? text)
+        {
+            if (string.IsNullOrWhiteSpace(text))
+                return "—";
 
+            int idx = text.LastIndexOf(':');
+
+            if (idx < 2)
+                return text;
+
+            return text.Substring(idx - 2);
+        }
+        private static (string candles, string havdalah)
+            ExtractShabbatTimes(ShabbatResponse? response)
+        {
+            if (response?.Items == null)
+                return ("—", "—");
+
+            string candles = "—";
+            string havdalah = "—";
+
+            foreach (var item in response.Items)
+            {
+                if (item.Category == "candles")
+                {
+                    candles = ExtractTime(item.Title);
+                }
+
+                if (item.Category == "havdalah")
+                {
+                    havdalah = ExtractTime(item.Title);
+                }
+            }
+
+            return (candles, havdalah);
+        }
         public HebcalService(HttpClient httpClient)
         {
             _httpClient = httpClient;
@@ -84,8 +119,18 @@ namespace BeitKnesetDisplay.Services
             if (!string.IsNullOrWhiteSpace(shabbatJson))
             {
                 result.Parasha = ParseParashaJson(shabbatJson);
+
+                var shabbat =
+                    JsonSerializer.Deserialize<ShabbatResponse>(
+                        shabbatJson,
+                        _jsonOptions);
+
+                var times = ExtractShabbatTimes(shabbat);
+
+                result.CandleLighting = times.candles;
+                result.Havdalah = times.havdalah;
             }
-            
+
             return result;
         }
 

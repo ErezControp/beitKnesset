@@ -20,7 +20,7 @@ namespace BeitKnesetDisplay.ViewModels
 
         private int _index;
 
-        private string _currentVerse;
+        private string _currentVerse = "";
 
         public string CurrentVerse
         {
@@ -50,7 +50,7 @@ namespace BeitKnesetDisplay.ViewModels
             timer.Start();
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
