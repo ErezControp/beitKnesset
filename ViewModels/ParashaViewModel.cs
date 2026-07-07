@@ -24,7 +24,7 @@ namespace BeitKnesetDisplay.ViewModels
                     AppContext.BaseDirectory,
                     "Data",
                     "ParashaContent.json");
-
+            ParashaName = path;
             if (!File.Exists(path))
                 return;
 

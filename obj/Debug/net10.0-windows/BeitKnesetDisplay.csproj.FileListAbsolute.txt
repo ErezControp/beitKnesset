@@ -37,3 +37,4 @@ C:\VisualStudioProjects\BeitKnesetDisplay\BeitKnesetDisplay\obj\Debug\net10.0-wi
 C:\VisualStudioProjects\BeitKnesetDisplay\BeitKnesetDisplay\obj\Debug\net10.0-windows\Views\PrayersView.g.cs
 C:\VisualStudioProjects\BeitKnesetDisplay\BeitKnesetDisplay\obj\Debug\net10.0-windows\Views\WelcomeView.baml
 C:\VisualStudioProjects\BeitKnesetDisplay\BeitKnesetDisplay\obj\Debug\net10.0-windows\Views\WelcomeView.g.cs
+C:\VisualStudioProjects\BeitKnesetDisplay\BeitKnesetDisplay\bin\Debug\net10.0-windows\Data\ParashaContent.json

@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/parashacontent.json")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("shabbat.json")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zmanim.json")]
 

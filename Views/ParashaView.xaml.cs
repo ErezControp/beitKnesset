@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
+﻿using BeitKnesetDisplay.ViewModels;
 using System.Windows.Controls;
 
 namespace BeitKnesetDisplay.Views
@@ -11,6 +8,8 @@ namespace BeitKnesetDisplay.Views
         public ParashaView()
         {
             InitializeComponent();
+
+            DataContext = new ParashaViewModel("פרשת מטות־מסעי");
         }
     }
 }
