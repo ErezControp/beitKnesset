@@ -5,11 +5,11 @@ namespace BeitKnesetDisplay.Views
 {
     public partial class ParashaView : UserControl
     {
-        public ParashaView()
+        public ParashaView(string parasha)
         {
             InitializeComponent();
 
-            DataContext = new ParashaViewModel("פרשת מטות־מסעי");
+            DataContext = new ParashaViewModel(parasha);
         }
     }
 }

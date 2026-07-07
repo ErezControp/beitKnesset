@@ -382,7 +382,7 @@ namespace BeitKnesetDisplay.ViewModels
                     break;
 
                 case 4:
-                    CurrentView = new ParashaView();
+                    CurrentView = new ParashaView(Parasha);
                     break;
 
                 case 5:

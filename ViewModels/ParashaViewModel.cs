@@ -1,6 +1,9 @@
 ﻿using BeitKnesetDisplay.Models;
 using System.IO;
 using System.Text.Json;
+using System.Collections.Generic;
+using System.Linq;
+
 
 namespace BeitKnesetDisplay.ViewModels
 {
@@ -14,6 +17,12 @@ namespace BeitKnesetDisplay.ViewModels
 
         public ParashaViewModel(string parashaName)
         {
+            ParashaName = "TEST";
+
+            ParashaTopics = "TEST TOPICS";
+
+            RebbeMessage = "TEST MESSAGE";
+
             LoadParasha(parashaName);
         }
 
@@ -30,9 +39,14 @@ namespace BeitKnesetDisplay.ViewModels
 
             string json = File.ReadAllText(path);
 
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+
             var parashot =
                 JsonSerializer.Deserialize<
-                    Dictionary<string, ParashaInfo>>(json);
+                    Dictionary<string, ParashaInfo>>(json, options);
 
             if (parashot == null)
                 return;
@@ -40,13 +54,23 @@ namespace BeitKnesetDisplay.ViewModels
             if (!parashot.TryGetValue(parashaName, out var info))
                 return;
 
+            ParashaName =
+                $"{parashaName}  Topics={info.Topics.Count}  Msg={(info.Message?.Length ?? 0)}";
+
             ParashaName = parashaName;
 
-            ParashaTopics =
-                string.Join(
-                    Environment.NewLine,
-                    info.Topics.Select(t => $"• {t}"));
+            //ParashaTopics =
+            //    string.Join(
+            //        Environment.NewLine,
+            //        info.Topics.Select(t => $"• {t}"));
 
+            ParashaTopics = "";
+
+            foreach (var topic in info.Topics)
+            {
+                ParashaTopics += $"• {topic}\n";
+            }
+            
             RebbeMessage = info.Message;
         }
     }

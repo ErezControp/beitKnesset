@@ -16,7 +16,7 @@
             <!-- שעון -->
             <TextBlock Text="{Binding CurrentTime}"
                Canvas.Left="780"
-               Canvas.Top="110"
+               Canvas.Top="85"
                Width="330"
                FontSize="52"
                FontWeight="Bold"
@@ -30,67 +30,66 @@
             </TextBlock>
 
             <!-- יום בשבוע -->
-            <TextBlock Text="{Binding DayName}"
-               Canvas.Left="1240"
-               Canvas.Top="55"
-               Width="260"
-               FontSize="34"
-               FontWeight="Bold"
-               Foreground="#1E1A72"
-               TextAlignment="Center"/>
+            <TextBlock Text="{Binding DayName}"               
+                    Canvas.Left="1280"
+                    Canvas.Top="48"
+                    Width="350"
+                   FontSize="34"
+                   FontWeight="Bold"
+                   Foreground="#1E1A72"
+                   TextAlignment="Center"/>
 
             <!-- תאריך עברי -->
             <TextBlock Text="{Binding HebrewDate}"
-               Canvas.Left="130"
-               Canvas.Top="55"
-               Width="320"
+               Canvas.Left="180"
+                Canvas.Top="60"
+                Width="420"
                FontSize="28"
                FontWeight="Bold"
                Foreground="#1E1A72"
                TextAlignment="Center"/>
 
             <!-- הדלקת נרות -->
-            <TextBlock Text="הדלקת נרות"
-               Canvas.Left="1220"
-               Canvas.Top="190"
-               Width="260"
-               FontSize="28"
+            <StackPanel Orientation="Horizontal"
+            Canvas.Left="1310"
+            Canvas.Top="170">
+
+                <TextBlock Text="הדלקת נרות"
+               FontSize="30"
                FontWeight="Bold"
                Foreground="#1E1A72"
-               TextAlignment="Center"/>
+               Margin="0,0,25,0"/>
 
-            <TextBlock Text="{Binding CandleLighting}"
-               Canvas.Left="1240"
-               Canvas.Top="300"
-               Width="220"
-               FontSize="58"
+                <TextBlock Text="{Binding CandleLighting}"
+               FontSize="42"
                FontWeight="Bold"
-               Foreground="#2416A6"
-               TextAlignment="Center"/>
+               Foreground="#2416A6"/>
+
+            </StackPanel>
 
             <!-- צאת שבת -->
-            <TextBlock Text="יציאת שבת"
-               Canvas.Left="140"
-               Canvas.Top="190"
-               Width="260"
-               FontSize="28"
+            <StackPanel Orientation="Horizontal"
+            Canvas.Left="170"
+            Canvas.Top="170">
+
+                <TextBlock Text="יציאת שבת"
+               FontSize="30"
                FontWeight="Bold"
                Foreground="#1E1A72"
-               TextAlignment="Center"/>
+               Margin="0,0,25,0"/>
 
-            <TextBlock Text="{Binding Havdalah}"
-               Canvas.Left="160"
-               Canvas.Top="300"
-               Width="220"
-               FontSize="58"
+                <TextBlock Text="{Binding Havdalah}"
+               FontSize="42"
                FontWeight="Bold"
-               Foreground="#2416A6"
-               TextAlignment="Center"/>
+               Foreground="#2416A6"/>
+
+            </StackPanel>
+
 
             <!-- כותרת מסגרת מרכזית -->
             <TextBlock Text="פרשת שבוע"
                Canvas.Left="690"
-               Canvas.Top="395"
+               Canvas.Top="330"
                Width="550"
                FontSize="26"
                FontWeight="Bold"
@@ -100,9 +99,9 @@
             <!-- פרשה -->
             <TextBlock Text="{Binding Parasha}"
                Canvas.Left="500"
-               Canvas.Top="510"
+               Canvas.Top="530"
                Width="900"
-               FontSize="68"
+               FontSize="48"
                FontWeight="Bold"
                Foreground="#2416A6"
                TextAlignment="Center"/>
@@ -119,9 +118,9 @@
 
             <!-- פס תחתון שמאל -->
             <TextBlock Text="{Binding GregorianDate}"
-               Canvas.Left="150"
-               Canvas.Top="930"
-               Width="420"
+               Canvas.Left="110"
+               Canvas.Top="750"
+               Width="520"
                FontSize="30"
                FontWeight="Bold"
                Foreground="#1E1A72"
@@ -129,9 +128,9 @@
 
             <!-- פס תחתון ימין -->
             <TextBlock Text="בית הכנסת קונטרופ"
-               Canvas.Left="1210"
-               Canvas.Top="930"
-               Width="450"
+               Canvas.Left="1010"
+               Canvas.Top="750"
+               Width="500"
                FontSize="30"
                FontWeight="Bold"
                Foreground="#1E1A72"
