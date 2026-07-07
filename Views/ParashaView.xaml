@@ -4,12 +4,14 @@
 
     <Grid>
 
-        <Image Source="/Assets/beit_mikdash.jpg"
+        <Image Source="/Assets/torah_background.png"
                Stretch="UniformToFill"/>
 
         <Rectangle Fill="#66000000"/>
 
-        <StackPanel VerticalAlignment="Center">
+        <StackPanel Margin="80"
+                    VerticalAlignment="Center">
+
 
             <TextBlock Text="פרשת השבוע"
                        FontSize="42"
@@ -17,12 +19,26 @@
                        FontWeight="Bold"
                        HorizontalAlignment="Center"/>
 
-            <TextBlock Text="{Binding Parasha}"
-                       FontSize="72"
-                       Foreground="White"
+            <TextBlock Text="{Binding ParashaName}"
+                       FontSize="62"
                        FontWeight="Bold"
+                       Foreground="#FFD700"
                        HorizontalAlignment="Center"
                        Margin="0,20,0,0"/>
+
+            <TextBlock Text="{Binding ParashaTopics}"
+                   FontSize="32"
+                   Foreground="White"
+                   TextWrapping="Wrap"
+                   TextAlignment="Center"
+                   Margin="0,40,0,40"/>
+
+            <TextBlock Text="{Binding RebbeMessage}"
+                   FontSize="28"
+                   Foreground="#FFF8DC"
+                   TextWrapping="Wrap"
+                   TextAlignment="Center"/>
+
 
         </StackPanel>
 

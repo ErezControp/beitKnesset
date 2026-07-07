@@ -12,6 +12,8 @@
     <None Remove="Assets\background1.jpg" />
     <None Remove="Assets\beit_mikdash.jpg" />
     <None Remove="Assets\controp_logo.PNG" />
+    <None Remove="Assets\soldiers_wall.jpg" />
+    <None Remove="Assets\torah_background.png" />
     <None Remove="shabbat.json" />
     <None Remove="zmanim.json" />
   </ItemGroup>
@@ -35,6 +37,16 @@
     <Resource Include="Assets\controp_logo.PNG">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\soldiers_wall.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\torah_background.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Data\ParashaContent.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

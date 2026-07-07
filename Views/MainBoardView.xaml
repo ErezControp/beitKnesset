@@ -12,110 +12,129 @@
                Stretch="Fill"/>
 
         <Canvas>
-
+            
             <!-- שעון -->
             <TextBlock Text="{Binding CurrentTime}"
-               Canvas.Left="760"
-               Canvas.Top="65"
-               Width="220"
-               TextAlignment="Center"
-               FontSize="54"
+               Canvas.Left="780"
+               Canvas.Top="110"
+               Width="330"
+               FontSize="52"
                FontWeight="Bold"
-               Foreground="White">
+               Foreground="White"
+               TextAlignment="Center">
                 <TextBlock.Effect>
                     <DropShadowEffect Color="Black"
-                              BlurRadius="10"
+                              BlurRadius="8"
                               ShadowDepth="2"/>
                 </TextBlock.Effect>
             </TextBlock>
 
-            <!-- יום בשבוע - שמאל עליון -->
+            <!-- יום בשבוע -->
             <TextBlock Text="{Binding DayName}"
-               Canvas.Left="70"
-               Canvas.Top="50"
+               Canvas.Left="1240"
+               Canvas.Top="55"
                Width="260"
-               FontSize="28"
+               FontSize="34"
                FontWeight="Bold"
-               Foreground="White"
+               Foreground="#1E1A72"
                TextAlignment="Center"/>
 
-            <!-- תאריך עברי - ימין עליון -->
+            <!-- תאריך עברי -->
             <TextBlock Text="{Binding HebrewDate}"
-               Canvas.Left="1330"
-               Canvas.Top="50"
-               Width="280"
-               FontSize="22"
+               Canvas.Left="130"
+               Canvas.Top="55"
+               Width="320"
+               FontSize="28"
                FontWeight="Bold"
-               Foreground="White"
+               Foreground="#1E1A72"
                TextAlignment="Center"/>
 
             <!-- הדלקת נרות -->
             <TextBlock Text="הדלקת נרות"
-               Canvas.Left="100"
-               Canvas.Top="430"
-               Width="180"
-               FontSize="22"
-               Foreground="White"
+               Canvas.Left="1220"
+               Canvas.Top="190"
+               Width="260"
+               FontSize="28"
+               FontWeight="Bold"
+               Foreground="#1E1A72"
                TextAlignment="Center"/>
 
             <TextBlock Text="{Binding CandleLighting}"
-               Canvas.Left="100"
-               Canvas.Top="470"
-               Width="180"
-               FontSize="38"
+               Canvas.Left="1240"
+               Canvas.Top="300"
+               Width="220"
+               FontSize="58"
                FontWeight="Bold"
-               Foreground="White"
+               Foreground="#2416A6"
                TextAlignment="Center"/>
 
             <!-- צאת שבת -->
-            <TextBlock Text="צאת שבת"
-               Canvas.Left="1480"
-               Canvas.Top="430"
-               Width="150"
-               FontSize="22"
-               Foreground="White"
+            <TextBlock Text="יציאת שבת"
+               Canvas.Left="140"
+               Canvas.Top="190"
+               Width="260"
+               FontSize="28"
+               FontWeight="Bold"
+               Foreground="#1E1A72"
                TextAlignment="Center"/>
 
             <TextBlock Text="{Binding Havdalah}"
-               Canvas.Left="1480"
-               Canvas.Top="470"
-               Width="150"
-               FontSize="38"
+               Canvas.Left="160"
+               Canvas.Top="300"
+               Width="220"
+               FontSize="58"
                FontWeight="Bold"
-               Foreground="White"
+               Foreground="#2416A6"
                TextAlignment="Center"/>
 
-            <!-- פרשה במרכז -->
-            <TextBlock Text="{Binding Parasha}"
-               Canvas.Left="460"
-               Canvas.Top="560"
-               Width="950"
-               FontSize="52"
+            <!-- כותרת מסגרת מרכזית -->
+            <TextBlock Text="פרשת שבוע"
+               Canvas.Left="690"
+               Canvas.Top="395"
+               Width="550"
+               FontSize="26"
                FontWeight="Bold"
-               Foreground="#FFD700"
-               TextAlignment="Center">
-                <TextBlock.Effect>
-                    <DropShadowEffect Color="Black"
-                              BlurRadius="15"
-                              ShadowDepth="2"/>
-                </TextBlock.Effect>
-            </TextBlock>
+               Foreground="#1E1A72"
+               TextAlignment="Center"/>
 
-            <!-- חג -->
+            <!-- פרשה -->
+            <TextBlock Text="{Binding Parasha}"
+               Canvas.Left="500"
+               Canvas.Top="510"
+               Width="900"
+               FontSize="68"
+               FontWeight="Bold"
+               Foreground="#2416A6"
+               TextAlignment="Center"/>
+
+            <!-- חג / ראש חודש -->
             <TextBlock Text="{Binding HolidayText}"
-               Canvas.Left="100"
-               Canvas.Top="900"
-               Width="300"
-               FontSize="24"
-               Foreground="White"/>
+               Canvas.Left="530"
+               Canvas.Top="690"
+               Width="850"
+               FontSize="48"
+               FontWeight="Bold"
+               Foreground="#2416A6"
+               TextAlignment="Center"/>
 
-            <!-- תאריך לועזי -->
+            <!-- פס תחתון שמאל -->
             <TextBlock Text="{Binding GregorianDate}"
-               Canvas.Left="1450"
-               Canvas.Top="900"
-               Width="200"
-               FontSize="24"
-               Foreground="White"
+               Canvas.Left="150"
+               Canvas.Top="930"
+               Width="420"
+               FontSize="30"
+               FontWeight="Bold"
+               Foreground="#1E1A72"
+               TextAlignment="Center"/>
+
+            <!-- פס תחתון ימין -->
+            <TextBlock Text="בית הכנסת קונטרופ"
+               Canvas.Left="1210"
+               Canvas.Top="930"
+               Width="450"
+               FontSize="30"
+               FontWeight="Bold"
+               Foreground="#1E1A72"
                TextAlignment="Center"/>
 
         </Canvas>
